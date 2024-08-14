@@ -79,7 +79,7 @@ const Login = () => {
           borderRadius: "12px",
           padding: "90px 57px",
           position: "relative",
-          zIndex: 9999,
+          zIndex: 0,
         }}
         onFinish={onFinish}
       >

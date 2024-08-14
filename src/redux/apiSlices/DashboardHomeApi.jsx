@@ -7,7 +7,10 @@ const homeSlices = api.injectEndpoints({
     }),
     incomeGrowth: builder.query({
       query: () => "/admin/income-growth",
-    }),
+    }), 
+    notification: builder.query({
+      query:()=>"/notifications/admin-notification"
+    })  ,
   }),
 });
-export const { useTotalDataQuery, useIncomeGrowthQuery } = homeSlices;
+export const { useTotalDataQuery, useIncomeGrowthQuery , useNotificationQuery  } = homeSlices;

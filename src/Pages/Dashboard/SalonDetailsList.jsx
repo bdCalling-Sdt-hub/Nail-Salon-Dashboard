@@ -4,6 +4,7 @@ import { useSalonDetailsQuery, useSalonFeaturedMutation } from "../../redux/apiS
 import { imageURL } from "../../redux/api/apislice";
 import SalonDetailsModal from "../../Components/SalonDetailsModal";
 import Swal from "sweetalert2";
+import { FaSearch } from "react-icons/fa";
 
 const SalonDetailsList = () => {
  
@@ -245,12 +246,13 @@ if(res?.data?.statusCode === 200){
               // <Search color="#fff" /> 
               style={{
                 width: 310,
-                background: "#e2e2e2",
+                background: "#F2F2F2",
                 boxShadow: "none",
                 color: "black",
               }}
               className=" h-10  border-0 text-primary placeholder:text-black hover:text-black"
-              placeholder="Search by location..." 
+              placeholder="Search by location..."  
+              prefix={<FaSearch color="gray"  size={18}/> }
               onChange={(e) => setKeyword(e.target.value)}
               // value={keyword}
             />

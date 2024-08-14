@@ -11,7 +11,6 @@ const OrderTransaction = () => {
   const [open, setOpen] = useState(false);
   const [statusData, setStatusData] = useState("");
   const [keyword, setKeyword] = useState("");
-  const dropdownRef = useRef();
   const values = {
     date: keyword,
     status: statusData,
@@ -154,7 +153,7 @@ const OrderTransaction = () => {
               width: 20,
               borderRadius: 50,
               background:
-                record?.status === "Completed" ? "#00B047" : "#F27405",
+                record?.status === "Complete" ? "#00B047" : "#F27405",
               color: "white",
               display: "flex",
             }}
@@ -162,7 +161,7 @@ const OrderTransaction = () => {
 
           <span
             style={{
-              color: record?.status === "Completed" ? "#00B047" : "#F27405",
+              color: record?.status === "Complete" ? "#00B047" : record?.status === "Pending" && "#F27405",
             }}
           >
             {record?.status}
@@ -225,7 +224,7 @@ const OrderTransaction = () => {
             <Input
               style={{
                 width: 350,
-                background: "#e2e2e2",
+                background: "#F2F2F2",
                 boxShadow: "none",
                 color: "black",
               }}

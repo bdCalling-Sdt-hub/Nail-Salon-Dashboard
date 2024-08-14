@@ -1,9 +1,11 @@
 
 import { Button } from "antd";
+import { useNotificationQuery } from "../../redux/apiSlices/DashboardHomeApi";
+import moment from "moment";
 
 
-const Notification = () => {
-
+const Notification = () => { 
+  const {data } = useNotificationQuery() 
 
   return (
     <div className="mt-5">
@@ -33,33 +35,16 @@ const Notification = () => {
               Notifications
             </h3>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <Button
-              style={{
-                height: "40px",
-
-                borderRadius: "8px",
-                border: "2px solid #6A5ECC",
-
-                background: "white",
-
-                color: "#6A5ECC",
-                fontWeight: "400",
-                fontSize: 14,
-              }}
-            >
-              <span>Read all</span>
-            </Button>
-          </div>
         </div>
-        <div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
+        <div> 
+          {
+            data?.data?.notifications?.map((value , index)=> {
+              return(
+                <div key={index}
+            style={{   
               margin: "16px 0",
               alignItems: "center",
-              background: "#FEF1E6",
+              backgroundColor:  "transparent" ,
               height: "80px",
               boxShadow:
                 "0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.10)",
@@ -86,7 +71,7 @@ const Notification = () => {
                     color: "#555555",
                   }}
                 >
-                  A new order has arrived
+                 {value?.title}
                 </span>
                 <span
                   style={{
@@ -94,8 +79,11 @@ const Notification = () => {
                     fontWeight: "400",
                     color: "#A7A7A7",
                   }}
-                >
-                  8:00am, today
+                > 
+                {
+ moment(value?.createdAt).format('MMM D YYYY, h:mm a')
+                }
+               
                 </span>
               </p>
               <p
@@ -105,309 +93,16 @@ const Notification = () => {
                   color: "#818181",
                 }}
               >
-                Babaji salon , order date 10 jun, 2024.
+               {value?.text}
               </p>
             </div>
-            <div
-              style={{
-                padding: "0px 20px",
-                cursor: "pointer",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 16,
-                  color: "#6A5ECC",
-                }}
-              >
-                View
-              </p>
-            </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              margin: "16px 0",
-              alignItems: "center",
-              background: "white",
-              height: "80px",
-              boxShadow:
-                "0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.10)",
-              padding: "16px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "6px",
-              }}
-            >
-              <p
-                style={{
-                  display: "flex",
-                  gap: "40px",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: 16,
-                    fontWeight: "600",
-                    color: "#555555",
-                  }}
-                >
-                  A new order has arrived
-                </span>
-                <span
-                  style={{
-                    fontSize: 14,
-                    fontWeight: "400",
-                    color: "#A7A7A7",
-                  }}
-                >
-                  8:00am, today
-                </span>
-              </p>
-              <p
-                style={{
-                  fontSize: 14,
-                  fontWeight: "400",
-                  color: "#818181",
-                }}
-              >
-                Babaji salon , order date 10 jun, 2024.
-              </p>
-            </div>
-            <div
-              style={{
-                padding: "0px 20px",
-                cursor: "pointer",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 16,
-                  color: "#6A5ECC",
-                }}
-              >
-                View
-              </p>
-            </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              margin: "16px 0",
-              alignItems: "center",
-              background: "white",
-              height: "80px",
-              boxShadow:
-                "0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.10)",
-              padding: "16px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "6px",
-              }}
-            >
-              <p
-                style={{
-                  display: "flex",
-                  gap: "40px",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: 16,
-                    fontWeight: "600",
-                    color: "#555555",
-                  }}
-                >
-                  A new order has arrived
-                </span>
-                <span
-                  style={{
-                    fontSize: 14,
-                    fontWeight: "400",
-                    color: "#A7A7A7",
-                  }}
-                >
-                  8:00am, today
-                </span>
-              </p>
-              <p
-                style={{
-                  fontSize: 14,
-                  fontWeight: "400",
-                  color: "#818181",
-                }}
-              >
-                Babaji salon , order date 10 jun, 2024.
-              </p>
-            </div>
-            <div
-              style={{
-                padding: "0px 20px",
-                cursor: "pointer",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 16,
-                  color: "#6A5ECC",
-                }}
-              >
-                View
-              </p>
-            </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              margin: "16px 0",
-              alignItems: "center",
-              background: "white",
-              height: "80px",
-              boxShadow:
-                "0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.10)",
-              padding: "16px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "6px",
-              }}
-            >
-              <p
-                style={{
-                  display: "flex",
-                  gap: "40px",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: 16,
-                    fontWeight: "600",
-                    color: "#555555",
-                  }}
-                >
-                  A new order has arrived
-                </span>
-                <span
-                  style={{
-                    fontSize: 14,
-                    fontWeight: "400",
-                    color: "#A7A7A7",
-                  }}
-                >
-                  8:00am, today
-                </span>
-              </p>
-              <p
-                style={{
-                  fontSize: 14,
-                  fontWeight: "400",
-                  color: "#818181",
-                }}
-              >
-                Babaji salon , order date 10 jun, 2024.
-              </p>
-            </div>
-            <div
-              style={{
-                padding: "0px 20px",
-                cursor: "pointer",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 16,
-                  color: "#6A5ECC",
-                }}
-              >
-                View
-              </p>
-            </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              margin: "16px 0",
-              alignItems: "center",
-              background: "white",
-              height: "80px",
-              boxShadow:
-                "0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.10)",
-              padding: "16px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "6px",
-              }}
-            >
-              <p
-                style={{
-                  display: "flex",
-                  gap: "40px",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: 16,
-                    fontWeight: "600",
-                    color: "#555555",
-                  }}
-                >
-                  A new order has arrived
-                </span>
-                <span
-                  style={{
-                    fontSize: 14,
-                    fontWeight: "400",
-                    color: "#A7A7A7",
-                  }}
-                >
-                  8:00am, today
-                </span>
-              </p>
-              <p
-                style={{
-                  fontSize: 14,
-                  fontWeight: "400",
-                  color: "#818181",
-                }}
-              >
-                Babaji salon , order date 10 jun, 2024.
-              </p>
-            </div>
-            <div
-              style={{
-                padding: "0px 20px",
-                cursor: "pointer",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 16,
-                  color: "#6A5ECC",
-                }}
-              >
-                View
-              </p>
-            </div>
-          </div>
+           
+        </div> 
+              )
+            }
+            
+          )}
+         
         </div>
       </div>
     </div>

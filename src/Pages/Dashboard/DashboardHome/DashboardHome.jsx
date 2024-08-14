@@ -1,17 +1,11 @@
-import { Col, Row } from "antd";
+
 import React from "react";
 import "./DashboardHome.css";
-import TotalSellerListTable from "../../../Components/Dashboard/TotalSellerListTable";
 import TotalSellerChart from "./TotalSellerChart";
 import DailyOverviewChart from "./DailyOverviewChart";
-import { HiUserGroup } from "react-icons/hi";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import { GrMoney } from "react-icons/gr";
 import { IoIosCut } from "react-icons/io";
-import { LuBox } from "react-icons/lu";
-import { TbDatabaseDollar } from "react-icons/tb";
-import UserCard from "./UserCard";
-import { Link } from "react-router-dom";
 import TotalEarningGoth from "./TotalEarningGrowth";
 import { useTotalDataQuery } from "../../../redux/apiSlices/DashboardHomeApi";
 

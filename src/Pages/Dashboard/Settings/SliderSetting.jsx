@@ -146,7 +146,6 @@ const SliderSetting = () => {
         <p
           style={{
             display: "flex",
-            justifyContent: "center",
             alignItems: "center",
             gap: 20,
           }}
@@ -204,8 +203,10 @@ const SliderSetting = () => {
               showConfirmButton: false,
               timer: 1500,
             }).then(() => {
-              refetch(); 
-              form.resetFields()
+              refetch();  
+              setOpenAddModel(false);  
+              setImgUrl(null)
+              form.resetFields() 
             });
           } else {
             Swal.fire({
@@ -230,7 +231,9 @@ const SliderSetting = () => {
             timer: 1500,
           }).then(() => {
             refetch(); 
-            form.resetFields()
+            setOpenAddModel(false); 
+            setImgUrl(null) 
+            form.resetFields() 
           });
         } else {
           Swal.fire({
@@ -321,7 +324,7 @@ const SliderSetting = () => {
             className="font-semibold text-[#555555]"
             style={{ marginBottom: "12px" }}
           >
-            {updateData?.key ? `Update Slider` : `Add Slider`}
+            {updateData?.id ? `Update Slider` : `Add Slider`}
           </h1>
           <Form onFinish={onFinish} form={form}>
             <div>

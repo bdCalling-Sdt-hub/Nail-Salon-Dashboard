@@ -22,7 +22,7 @@ const Dashboard = () => {
   const [setting, setSetting] = useState(false);
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  console.log(setting);
+  
   const handleLogOut = () => {
     navigate("/login");
     window.location.reload();
@@ -60,12 +60,6 @@ const Dashboard = () => {
       path: "/order-transaction-list",
       icon: <LiaFileInvoiceDollarSolid size={24} />,
     },
-    {
-      title: "Notifications",
-      path: "/notification",
-      icon: <GoBell size={24} />,
-    },
-
     {
       title: "Settings",
       path: "/setting",
@@ -135,17 +129,6 @@ const Dashboard = () => {
             <img src={Logo} height="40px" />
           </Link>
         </div>
-
-        {/* <div
-          style={{
-            marginBottom: "30px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <img src={LogoText} height="50px" width="50%" />
-        </div> */}
 
         <ul
           style={{
@@ -286,7 +269,7 @@ const Dashboard = () => {
         </ul>
       </Sider>
 
-      <Layout>
+      <Layout> 
         <Header
           style={{
             position: "fixed",
@@ -313,9 +296,9 @@ const Dashboard = () => {
             <Link to="/notification">
               <div
                 style={{
-                  background: "#6A5ECC",
-                  width: 45,
-                  height: 45,
+                 
+                  width: 50,
+                  height: 50,
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -323,7 +306,7 @@ const Dashboard = () => {
                   position: "relative",
                 }}
               >
-                <RiNotification2Line color="white" size={19} />
+                <RiNotification2Line color="#6A5ECC" size={19} />
 
                 <div
                   style={{

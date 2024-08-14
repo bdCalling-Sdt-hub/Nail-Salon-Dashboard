@@ -8,7 +8,8 @@ const OrdersTransactionModal = ({open ,setOpen , modalData }) => {
 
     const totalPrice = modalData?.price?.reduce((sum, service) => {
         return sum + parseFloat(service?.price || 0);
-      }, 0); 
+      }, 0);  
+  
 
       const bookingTime = moment(modalData?.booking_time, "HH:mm a").format('LT')
 
@@ -76,7 +77,7 @@ const OrdersTransactionModal = ({open ,setOpen , modalData }) => {
           <div className=""> 
 
             {
-                modalData?.service_orders?.map((value)=><div key={modalData?.key} className='flex justify-between items-center pb-2'> 
+                modalData?.service_orders?.map((value , index )=><div key={index} className='flex justify-between items-center pb-2'> 
  <p className="text-[#000000] text-sm whitespace-nowrap">
             {value?.serviceName}
             </p>
@@ -100,7 +101,7 @@ const OrdersTransactionModal = ({open ,setOpen , modalData }) => {
                 </div> 
 
 
-          <div className="flex justify-start items-center gap-2 text-[#00B047]">
+          <div className={`flex justify-start items-center gap-2 ${modalData?.status === "Complete" ? "text-[#00B047]" : "text-[#F27405]"}  `}>
             <FaCircle className="text-xl" /> {modalData?.status}
           </div>
         </div>

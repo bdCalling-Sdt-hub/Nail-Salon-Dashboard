@@ -26,47 +26,6 @@ const DailyOverviewChart = ({ totalSalon }) => {
     amt: 10,
   }));
 
-  const [year, setYear] = useState(2024);
-
-  const items = [
-    {
-      label: 2023,
-      key: "2023",
-    },
-    {
-      label: 2024,
-      key: "2024",
-    },
-    {
-      label: 2025,
-      key: "2025",
-    },
-    {
-      label: 2026,
-      key: "2026",
-    },
-  ];
-
-  const onClick = ({ key }) => {
-    setYear(key);
-  };
-
-  /* useEffect(() => {
-    if(year !== 2024){
-      window.history.pushState(null, "", `?year=${year}`);
-    }
-  }, [year]);
-
-  useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-    const yearParam = searchParams.get('year');
-    if (yearParam) {
-      const parsedYear = parseInt(yearParam, 10);
-      setYear(parsedYear);
-    } else {
-      window.location.reload();
-    }
-  }, []); */
 
   return (
     <div
@@ -95,38 +54,7 @@ const DailyOverviewChart = ({ totalSalon }) => {
         >
           Total Salon statistics
         </p>
-        <Dropdown menu={{ items, onClick }}>
-          <p
-            style={{
-              // width: "79px",
-              cursor: "pointer",
-              color: "#717171",
-              border: "1px solid #E9E9E9",
-              borderRadius: "4px",
-              padding: "4px 12px",
-            }}
-            onClick={(e) => e.preventDefault()}
-          >
-            {year}
-            <DownOutlined style={{ paddingLeft: "18px" }} color="#717171" />
-          </p>
-        </Dropdown>
       </div>
-
-      {/* <div style={{display: "flex", alignItems: "center", gap: "31px", marginBottom: "19px"}}>
-          <div>
-            <p style={{fontSize: "12px", fontWeight: 400, color: "#808080"}}>Overly Growth</p>
-            <h1 style={{fontSize: "14px", fontWeight: 700, color: "#2F2F2F"}}>38.38%</h1>
-          </div>
-          <div>
-            <p style={{fontSize: "12px", fontWeight: 400, color: "#808080"}}>Monthly</p>
-            <h1 style={{fontSize: "14px", fontWeight: 700, color: "#2F2F2F"}}>15.5%</h1>
-          </div>
-          <div>
-            <p style={{fontSize: "12px", fontWeight: 400, color: "#808080"}}>Daily</p>
-            <h1 style={{fontSize: "14px", fontWeight: 700, color: "#2F2F2F"}}>58.50%</h1>
-          </div>
-    </div> */}
       <ResponsiveContainer width={"100%"} height={300}>
         <LineChart data={data} barGap={100}>
           <CartesianGrid horizontal vertical={false} />

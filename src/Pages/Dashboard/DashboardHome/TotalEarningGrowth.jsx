@@ -29,31 +29,6 @@ const TotalEarningGrowth = () => {
     amt: 10,
   }));
 
-  const [year, setYear] = useState(2024);
-
-  const items = [
-    {
-      label: 2023,
-      key: "2023",
-    },
-    {
-      label: 2024,
-      key: "2024",
-    },
-    {
-      label: 2025,
-      key: "2025",
-    },
-    {
-      label: 2026,
-      key: "2026",
-    },
-  ];
-
-  const onClick = ({ key }) => {
-    setYear(key);
-  };
-
   return (
     <div
       style={{
@@ -81,22 +56,7 @@ const TotalEarningGrowth = () => {
         >
           Total earning growth
         </p>
-        <Dropdown menu={{ items, onClick }}>
-          <p
-            style={{
-              // width: "79px",
-              cursor: "pointer",
-              color: "#717171",
-              border: "1px solid #E9E9E9",
-              borderRadius: "4px",
-              padding: "4px 12px",
-            }}
-            onClick={(e) => e.preventDefault()}
-          >
-            {year}
-            <DownOutlined style={{ paddingLeft: "18px" }} color="#717171" />
-          </p>
-        </Dropdown>
+
       </div>
 
       <ResponsiveContainer width={"100%"} height={380}>

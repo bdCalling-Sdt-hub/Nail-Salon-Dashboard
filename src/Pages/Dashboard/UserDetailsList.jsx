@@ -6,6 +6,7 @@ import { RiLoader3Fill } from "react-icons/ri";
 import { useTotalUserQuery } from "../../redux/apiSlices/AllUserApi";
 import { GrClose } from "react-icons/gr";
 import { imageURL } from "../../redux/api/apislice";
+import { FaSearch } from "react-icons/fa";
 const { Search } = Input;
 const UserDetailsList = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -175,15 +176,16 @@ const UserDetailsList = () => {
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
             <Input
-              // <Search color="#fff" /> 
+             
               style={{
                 width: 350,
-                background: "#e2e2e2",
+                background: "#F2F2F2",
                 boxShadow: "none",
                 color: "black",
               }}
               className=" h-12  border-0 text-primary placeholder:text-black hover:text-black"
-              placeholder="Search by location..."
+              placeholder="Search by location..." 
+              prefix={<FaSearch color="gray"  size={18}/> }
               onChange={(e) => setKeyword(e.target.value)}
               // value={keyword}
             />
