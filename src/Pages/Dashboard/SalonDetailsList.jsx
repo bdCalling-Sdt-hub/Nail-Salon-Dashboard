@@ -73,7 +73,11 @@ if(res?.data?.statusCode === 200){
     }
   }; 
 
-  const Features= [
+  const Features= [ 
+   {
+    value:'',
+    label: 'All Featured'
+   },
     {
       value: true,
       label: 'Featured On',

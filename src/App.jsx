@@ -35,6 +35,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import PrivateRoute from "./routes/PrivateRoute";
 
+
 function App() {
   return (
     <>
