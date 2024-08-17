@@ -3,7 +3,15 @@ import { api } from "../api/apislice";
 const salonSlices = api.injectEndpoints({
   endpoints: (builder) => ({
     salonDetails: builder.query({
-      query: (value) => `/salon/salon-list?location=${value?.searchValue}&featured=${value?.isFeatured}`,
+      query: ({searchValue , isFeatured}) => {    
+        console.log(isFeatured);
+        const params = new URLSearchParams()  
+        if(searchValue)params.append("location" , searchValue)
+        if(isFeatured)params.append("featured" , isFeatured)
+        return{
+          url: `/salon/salon-list?${params.toString()}`,
+        }
+      }
     }),  
 
     salonFeatured: builder.mutation({

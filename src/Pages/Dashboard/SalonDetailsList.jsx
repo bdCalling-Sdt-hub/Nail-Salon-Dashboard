@@ -12,14 +12,10 @@ const SalonDetailsList = () => {
   const [open, setOpen] = useState(false);
 
   const [modalData, setModalData] = useState({});  
-  const [isFeatured , setIsFeatured]= useState(true)
+  const [isFeatured , setIsFeatured]= useState()
   const [keyword, setKeyword] = useState(""); 
-  const salonValue ={
-    searchValue: keyword ,  
-    isFeatured: isFeatured
-  } 
-  console.log(salonValue);
-  const { data  , refetch} = useSalonDetailsQuery(salonValue); 
+
+  const { data  , refetch} = useSalonDetailsQuery({ searchValue: keyword , isFeatured: isFeatured}); 
 
   console.log(data);  
   const [salonFeatured] = useSalonFeaturedMutation()
@@ -74,23 +70,17 @@ if(res?.data?.statusCode === 200){
   }; 
 
   const Features= [ 
-   {
-    value:'',
-    label: 'All Featured'
-   },
+
     {
-      value: true,
+      value: "true",
       label: 'Featured On',
     },
     {
-      value: false,
+      value: "false",
       label: 'Featured off',
     },
   ] 
 
-  const handleChange = (value) => {
-    setIsFeatured(value)
-  };
 
   const columns = [
     {
@@ -263,12 +253,12 @@ if(res?.data?.statusCode === 200){
 
 
 <Select
-      defaultValue="Featured On"
+     placeholder="Filter By Featured"
       style={{
         width: 150, 
         height: 40
       }}
-      onChange={handleChange}
+      onChange={(e)=>setIsFeatured(e)}
       options={Features}
     />
        
