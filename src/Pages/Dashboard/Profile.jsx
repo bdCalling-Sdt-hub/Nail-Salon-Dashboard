@@ -9,10 +9,10 @@ const Profile = () => {
     "https://avatars.design/wp-content/uploads/2021/02/corporate-avatars-TN-1.jpg"
   );
   const [imgURL, setImgURL] = useState(image);
-
-  console.log(data);
+ 
+  // console.log(data); 
   const handleSubmit = (values) => {
-    console.log(values);
+    // console.log(values); 
     Swal.fire({
       position: "center",
       icon: "success",

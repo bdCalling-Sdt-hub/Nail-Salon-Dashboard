@@ -4,7 +4,7 @@ import React from 'react';
 import moment from 'moment';
 
 const OrdersTransactionModal = ({open ,setOpen , modalData }) => { 
-    console.log(modalData); 
+    // console.log(modalData);  
 
     const totalPrice = modalData?.price?.reduce((sum, service) => {
         return sum + parseFloat(service?.price || 0);

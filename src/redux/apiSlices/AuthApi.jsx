@@ -4,7 +4,7 @@ const authSlice = api.injectEndpoints({
   endpoints: (builder) => ({
     adminLogin: builder.mutation({
       query: (data) => { 
-        console.log( "fromRedux",  data);
+        // console.log( "fromRedux",  data); 
         return{
         method: "POST",
         url: "/admin/login",
@@ -55,7 +55,7 @@ const authSlice = api.injectEndpoints({
 
     changePassword: builder.mutation({
       query: (data) => {
-        console.log(data);
+        // console.log(data); 
         return {
           url: "/admin/change-password",
           method: "POST",

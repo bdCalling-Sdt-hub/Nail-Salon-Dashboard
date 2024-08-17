@@ -11,11 +11,11 @@ import { useTotalDataQuery } from "../../../redux/apiSlices/DashboardHomeApi";
 
 function DashboardHome() {
   const { data } = useTotalDataQuery();
-  console.log(data);
+  // console.log(data); 
   const totalUser = data?.data?.userMonths;
   const totalSalon = data?.data?.salonMonths;
   const onChange = (pageNumber) => {
-    console.log("Page: ", pageNumber);
+    // console.log("Page: ", pageNumber); 
   };
 
   const datas = [

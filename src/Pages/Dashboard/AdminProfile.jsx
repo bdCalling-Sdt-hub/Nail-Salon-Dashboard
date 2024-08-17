@@ -14,13 +14,13 @@ const AdminProfile = () => {
   const { data , refetch } = useGetProfileQuery();
   const [updateProfile ] = useUpdateProfileMutation();
   const profileData = data?.user;
-  console.log(data);
+  // console.log(data); 
 
   const [newPassError, setNewPassError] = useState("");
   const [conPassError, setConPassError] = useState("");
   const [imgFile, setImgFile] = useState(null);
   const [imgUrl, setImgUrl] = useState("");
-  console.log(imgFile);
+  // console.log(imgFile); 
   const [form] = Form.useForm();
 
   // change Password
@@ -83,7 +83,7 @@ const AdminProfile = () => {
         }
       });
     }
-    console.log(values);
+    // console.log(values); 
   };
 
   const onFinish = async (values) => {

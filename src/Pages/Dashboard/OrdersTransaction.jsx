@@ -15,10 +15,10 @@ const OrderTransaction = () => {
     date: keyword,
     status: statusData,
   };
-  console.log(values);
+  // console.log(values); 
   const { data } = useOderHistoryQuery(values);
 
-  console.log(data);
+  // console.log(data); 
   const totalPage = data?.data?.meta?.total;
   const tablePage = data?.data?.meta?.page;
   const [currentPage, setCurrentPage] = useState(tablePage);
@@ -188,7 +188,7 @@ const OrderTransaction = () => {
   ];
 
   const handleChange = (value) => {
-    console.log(`selected ${value}`);
+    // console.log(`selected ${value}`); 
     setStatusData(value);
   };
 

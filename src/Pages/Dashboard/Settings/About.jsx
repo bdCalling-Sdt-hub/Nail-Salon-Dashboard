@@ -29,7 +29,7 @@ const About = () => {
 
   const handleSubmit = async () => {
     await updateData({ content: content }).then((res) => {
-      console.log(res);
+      // console.log(res); 
       if (res?.data?.statusCode === 200) {
         if (updateDatas) {
           Swal.fire({

@@ -8,7 +8,7 @@ const sliderSlices = api.injectEndpoints({
 
     createSlider: builder.mutation({
       query: (bannerData) => {
-        console.log(bannerData);
+        // console.log(bannerData); 
         return {
           url: "/banner/create-banner",
           method: "POST",

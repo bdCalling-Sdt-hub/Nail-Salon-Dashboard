@@ -18,14 +18,14 @@ const SliderSetting = () => {
   const [createSlider] = useCreateSliderMutation();
   // get
   const { data, refetch } = useGetSliderQuery();
-  console.log(data);
+  // console.log(data); 
  
   // update
   const [updateSlider] = useUpdateSliderMutation();
   // delete
   const [deleteSlider] = useDeleteSliderMutation();
   const [updateData, setUpdateData] = useState(null);
-  console.log(updateData);
+  // console.log(updateData); 
   const [form] = Form.useForm();
   const [imgFile, setImgFile] = useState(null);
   const [imgUrl, setImgUrl] = useState(null);
@@ -46,7 +46,7 @@ const SliderSetting = () => {
     }
   }, [updateData, form]);
 
-  console.log(data?.data);
+  // console.log(data?.data); 
   const datas = data?.data?.map((value, index) => ({
     key: index + 1,
     slider_image: value?.bannerImage.startsWith("https")
@@ -57,7 +57,7 @@ const SliderSetting = () => {
   }));
 
   const handleDelete = async (id) => {
-    console.log(id);
+    // console.log(id); 
     Swal.fire({
       title: "Are you sure?",
       icon: "warning",
@@ -69,7 +69,7 @@ const SliderSetting = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         await deleteSlider(id).then((response) => {
-          console.log(response);
+          // console.log(response); 
           if (response?.data?.statusCode === 200) {
             Swal.fire({
               title: "Deleted!",
@@ -184,7 +184,7 @@ const SliderSetting = () => {
  
 
   const onFinish = async (values) => {
-    console.log(values);
+    // console.log(values); 
     const formData = new FormData();
     if (imgFile) {
       formData.append("bannerImage", imgFile);
@@ -194,7 +194,7 @@ const SliderSetting = () => {
     if (updateData?.id) {
       await updateSlider({ id: updateData?.id, value: formData }).then(
         (res) => {
-          console.log(res);
+          // console.log(res); 
           if (res?.data?.statusCode === 200) {
             Swal.fire({
               title: "Slider Updated!",
@@ -221,7 +221,7 @@ const SliderSetting = () => {
       );
     } else {
       await createSlider(formData).then((res) => {
-        console.log(res);
+        // console.log(res); 
         if (res?.data?.statusCode === 200) {
           Swal.fire({
             title: "Slider Added!",

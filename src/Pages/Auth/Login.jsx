@@ -44,10 +44,10 @@ const Login = () => {
 
     try {
       await adminLogin(values).then(res=>{
-        console.log(res);
+        // console.log(res); 
       })
     } catch (error) {
-      console.log(error);
+      // console.log(error); 
     }
     
   };

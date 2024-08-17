@@ -19,26 +19,26 @@ const OtpVerify = () => {
   const userEmail = param?.email  
   localStorage.setItem("email", userEmail);
 const email = localStorage.getItem("email") 
-console.log(email); 
+// console.log(email);  
 
   const handleResendEmail = async () => {
     const data = {
       email: email,
     };
     await forgetPassword(data).then((res) => {
-      console.log(res);
+      // console.log(res); 
     });
   };
 
 
   const handleSubmit = async () => {
-    console.log(otp);
+    // console.log(otp); 
     const value = {
       email: param?.email,
       oneTimeCode: otp,
     };
     await otpCode(value).then((res) => {
-      console.log(res);
+      // console.log(res); 
       if (res?.data?.statusCode === 200) {
         Swal.fire({
           title: "Password Reset",

@@ -11,7 +11,7 @@ const Terms = () => {
   const [content, setContent] = useState("");
   const [isLoading, seLoading] = useState(false);
   const { data, refetch } = useGetTermsDataQuery();
-  console.log(data);
+  // console.log(data); 
   const [updateTermsData] = useUpdateTermsDataMutation();
   const config = {
     readonly: false,
@@ -27,7 +27,7 @@ const Terms = () => {
 
   const handleSubmit = async () => {
     await updateTermsData({ content: content }).then((res) => {
-      console.log(res);
+      // console.log(res); 
       if (res?.data?.statusCode === 200) {
         Swal.fire({
           title: "Terms & condition Updated!",

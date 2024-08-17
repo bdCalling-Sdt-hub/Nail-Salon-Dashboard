@@ -4,7 +4,7 @@ const salonSlices = api.injectEndpoints({
   endpoints: (builder) => ({
     salonDetails: builder.query({
       query: ({searchValue , isFeatured}) => {    
-        console.log(isFeatured);
+        // console.log(isFeatured); 
         const params = new URLSearchParams()  
         if(searchValue)params.append("location" , searchValue)
         if(isFeatured)params.append("featured" , isFeatured)

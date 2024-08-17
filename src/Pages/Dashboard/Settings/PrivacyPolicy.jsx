@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
   const [isLoading, seLoading] = useState(false);
   const { data, refetch } = useGetPrivacyDataQuery();
   const [updatePrivacyData] = useUpdatePrivacyDataMutation();
-  console.log(data);
+  // console.log(data); 
 
   const config = {
     readonly: false,
@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
 
   const handleSubmit = async () => {
     await updatePrivacyData({ content: content }).then((res) => {
-      console.log(res);
+      // console.log(res); 
       if (res?.data?.statusCode === 200) {
         Swal.fire({
           title: "Privacy policy Updated!",

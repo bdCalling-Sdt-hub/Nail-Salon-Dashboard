@@ -34,7 +34,7 @@ const UpdatePassword = () => {
       password: values?.password,
       confirmPassword: values?.confirmPassword,
     };
-    console.log(value);
+    // console.log(value); 
 
     if (Object.keys(errors).length === 0) {
       await updateProfile(value).then((response) => {

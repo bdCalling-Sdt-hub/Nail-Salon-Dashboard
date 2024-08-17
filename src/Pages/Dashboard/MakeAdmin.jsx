@@ -32,9 +32,9 @@ const SalonCategoryList = () => {
   }));
 
   const onFinish = async (values) => {
-    console.log(values);
+    // console.log(values); 
     await postAdminData(values).then((res) => {
-      console.log(res);
+      // console.log(res); 
       if (res?.data?.statusCode === 200) {
         Swal.fire({
           title: "Admin Added!",
@@ -62,7 +62,7 @@ const SalonCategoryList = () => {
   const dropdownRef = useRef();
 
   const handleDelete = async (id) => {
-    console.log(id);
+    // console.log(id); 
     Swal.fire({
       title: "Are you sure?",
       icon: "warning",
@@ -74,7 +74,7 @@ const SalonCategoryList = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         await deleteAdminData(id).then((res) => {
-          console.log(res);
+          // console.log(res); 
           if (res?.data?.statusCode === 200) {
             Swal.fire({
               title: "Deleted!",

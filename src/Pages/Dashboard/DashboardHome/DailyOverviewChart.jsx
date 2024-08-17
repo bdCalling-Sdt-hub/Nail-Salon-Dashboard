@@ -16,7 +16,7 @@ import {
 } from "recharts";
 
 const DailyOverviewChart = ({ totalSalon }) => {
-  console.log(totalSalon);
+  // console.log(totalSalon); 
 
   const data = totalSalon?.map((value) => ({
     name: value?.name,

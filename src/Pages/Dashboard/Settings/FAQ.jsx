@@ -21,7 +21,7 @@ const FAQ = () => {
 
   // get data
   const { data, refetch } = useGetFAQQuery();
-  console.log(data?.data);
+  // console.log(data?.data); 
   // update data
   const [updateFAQ] = useUpdateFAQMutation();
   // create data
@@ -32,7 +32,7 @@ const FAQ = () => {
 
   const handleEditModal = (values) => {
     setEditData(values);
-    console.log(editData);
+    // console.log(editData); 
   }; 
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const FAQ = () => {
   const handelsubmit = async (values) => { 
     if (editData?._id) {
       await updateFAQ({ id: editData?._id, value: value }).then((res) => {
-        console.log(res);
+        // console.log(res); 
         if (res?.data?.statusCode === 200) {
           Swal.fire({
             title: "Category Updated!",
@@ -69,7 +69,7 @@ const FAQ = () => {
       });
     }else{
       await createFAQ(values).then((res) => {
-        console.log(res);
+        // console.log(res); 
         if (res?.data?.statusCode === 200) {
           Swal.fire({
             title: "Category Added!",
@@ -101,7 +101,7 @@ const FAQ = () => {
   // delete faq
   const handleDelete = async (value) => {
     const id = value?._id;
-    console.log(id);
+    // console.log(id); 
     Swal.fire({
       title: "Are you sure?",
       icon: "warning",

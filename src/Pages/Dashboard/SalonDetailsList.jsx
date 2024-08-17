@@ -17,7 +17,7 @@ const SalonDetailsList = () => {
 
   const { data  , refetch} = useSalonDetailsQuery({ searchValue: keyword , isFeatured: isFeatured}); 
 
-  console.log(data);  
+  // console.log(data);   
   const [salonFeatured] = useSalonFeaturedMutation()
 
   const totalPage = data?.data?.meta?.total;
@@ -52,7 +52,7 @@ const SalonDetailsList = () => {
   const handleFeature = async(id) => {  
     try {
       await salonFeatured(id).then((res)=>{ 
-        console.log(res?.data?.statusCode)   
+        // console.log(res?.data?.statusCode)    
 if(res?.data?.statusCode === 200){
   Swal.fire({
     position: "center",
@@ -65,7 +65,7 @@ if(res?.data?.statusCode === 200){
 }
       })
     } catch (error) {
-      console.log(error);
+      // console.log(error); 
     }
   }; 
 

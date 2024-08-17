@@ -5,7 +5,7 @@ import { useSingleSalonDetailsQuery } from '../redux/apiSlices/SalonApi';
 
 const SalonDetailsModal = ({open ,setOpen , modalData }) => {  
     const {data:detailsData} = useSingleSalonDetailsQuery(modalData.id) 
-    console.log(modalData);
+    // console.log(modalData); 
     return (
         <div>
             <Modal

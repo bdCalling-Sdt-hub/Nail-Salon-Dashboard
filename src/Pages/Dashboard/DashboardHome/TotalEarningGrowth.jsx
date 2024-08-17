@@ -20,7 +20,7 @@ import { useIncomeGrowthQuery } from "../../../redux/apiSlices/DashboardHomeApi"
 
 const TotalEarningGrowth = () => {
   const { data } = useIncomeGrowthQuery();
-  console.log(data);
+  // console.log(data); 
   const datas = data?.data?.map((value) => ({
     name: value?.name,
     uv: value?.totalIncome,

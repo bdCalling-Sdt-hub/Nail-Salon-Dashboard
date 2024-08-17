@@ -85,7 +85,7 @@ const SalonCategoryList = () => {
     }
   }, [itemForEdit]);
 
-  console.log(imageUrl);
+  // console.log(imageUrl); 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -190,13 +190,13 @@ const SalonCategoryList = () => {
     if (imgFile) {
       formData.append("image", imgFile);
     }
-    console.log(values);
+    // console.log(values); 
     formData.append("name", values?.name);
 
     if (itemForEdit?.id) {
       await updateCategory({ id: itemForEdit?.id, data: formData }).then(
         (res) => {
-          console.log(res);
+          // console.log(res); 
           if (res?.data?.statusCode === 200) {
             Swal.fire({
               title: "Category Updated!",
@@ -221,7 +221,7 @@ const SalonCategoryList = () => {
       );
     } else {
       await addCategory(formData).then((res) => {
-        console.log(res);
+        // console.log(res); 
         if (res?.data?.statusCode === 200) {
           Swal.fire({
             title: "Category Added!",
