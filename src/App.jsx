@@ -31,6 +31,7 @@ import About from "./Pages/Dashboard/Settings/About";
 import PrivacyPolicy from "./Pages/Dashboard/Settings/PrivacyPolicy";
 import Terms from "./Pages/Dashboard/Settings/Terms";
 import FAQ from "./Pages/Dashboard/Settings/FAQ";
+import ContactUs from "./Pages/Dashboard/ContactUs";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import PrivateRoute from "./routes/PrivateRoute";
@@ -55,6 +56,7 @@ function App() {
                 <Route path="/" element={<DashboardHome />} />
                 <Route path="/user-list" element={<UserDetailsList />} />
                 <Route path="/salon-list" element={<SalonDetailsList />} />
+                <Route path="/contact" element={<ContactUs />} />
                 <Route
                   path="/salon-services-list"
                   element={<SalonServicesList />}

@@ -86,6 +86,10 @@ const Dashboard = () => {
           title: "Terms & Condition",
           path: "/terms",
         },
+        {
+          title: "Contact Info",
+          path: "/contact",
+        },
       ],
     },
     {

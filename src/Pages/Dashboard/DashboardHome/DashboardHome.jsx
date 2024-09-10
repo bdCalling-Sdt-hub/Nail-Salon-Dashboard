@@ -32,8 +32,13 @@ function DashboardHome() {
       bgColor: "#E5E5E5",
     },
     {
-      name: "Total Earning",
+      name: "Total Incomes",
       count: data?.data?.totalIncome,
+      icon: <GrMoney color="#6A5ECC" size={24} />,
+      bgColor: "#E5E5E5",
+    },{
+      name: "Total Earning",
+      count: `${data?.data?.totalEarnings}`,
       icon: <GrMoney color="#6A5ECC" size={24} />,
       bgColor: "#E5E5E5",
     },
@@ -41,7 +46,7 @@ function DashboardHome() {
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-3 items-center mt-4">
+      <div className="grid grid-cols-4 gap-3 items-center mt-4">
         {datas.map((item, index) => (
           <div
             key={index}
