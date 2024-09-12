@@ -39,8 +39,34 @@ const aboutSlices = api.injectEndpoints({
         method: "PATCH",
         body: data,
       }),
-    }),
-  }),
+    }), 
+
+    // contact  
+    getContact:builder.query({
+      query:()=>"/contact",
+    }) , 
+
+    postContact:builder.mutation({
+      query:(value)=>{
+ return{
+  url:"/contact" ,
+  method:"POST" ,
+  body: value
+ }
+      }
+    }) , 
+
+    updateContact:builder.mutation({
+      query:(data)=>({
+        url:`/contact/${data?.id}` ,
+        method:"PATCH" ,
+        body: data
+      })
+    })
+
+  }), 
+
+
 });
 export const {
   useGetAboutDataQuery,
@@ -48,5 +74,8 @@ export const {
   useGetPrivacyDataQuery,
   useUpdatePrivacyDataMutation,
   useGetTermsDataQuery,
-  useUpdateTermsDataMutation,
+  useUpdateTermsDataMutation,  
+  useGetContactQuery , 
+  usePostContactMutation ,
+  useUpdateContactMutation
 } = aboutSlices;

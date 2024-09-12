@@ -17,8 +17,8 @@ const SalonCategoryList = () => {
   const [imgFile, setImgFile] = useState(null);
 
   const [itemForEdit, setItemForEdit] = useState(null);
-  const dropdownRef = useRef();
-  const { data: categories, refetch } = useTotalCategoryQuery();
+  const { data: categories, refetch } = useTotalCategoryQuery(); 
+
   const [deleteCategory] = useDeleteCategoryMutation();
   const [form] = Form.useForm();
 
@@ -86,19 +86,6 @@ const SalonCategoryList = () => {
   }, [itemForEdit]);
 
   // console.log(imageUrl); 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setDate(false);
-        setOpen("");
-        setFilter(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
 
   const columns = [
     {

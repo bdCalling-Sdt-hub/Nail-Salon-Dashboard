@@ -17,8 +17,9 @@ const UserDetailsList = () => {
   const handlePage = (page) => {
     setCurrentPage(page);
   };
-  const dropdownRef = useRef();
-  const { data } = useTotalUserQuery(keyword);
+
+  const { data } = useTotalUserQuery({page:currentPage ,search:keyword}); 
+  console.log(data);
 
   const totalPage = data?.data?.meta?.total;
   const datas = data?.data?.users?.map((value, index) => ({
@@ -35,20 +36,6 @@ const UserDetailsList = () => {
     location: value?.location,
   }));
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setDate(false);
-        setOpen("");
-        setFilter(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-
   const showModal = (value) => {
     setOpen(true);
     setDetails(value);
@@ -58,7 +45,8 @@ const UserDetailsList = () => {
     {
       title: "S.No",
       dataIndex: "key",
-      key: "key",
+      key: "key", 
+      render:(key)=><p>{((currentPage-1)*10)+key}</p>
     },
     {
       title: "User",

@@ -10,12 +10,11 @@ const SalonDetailsList = () => {
  
   const [currentPage, setCurrentPage] = useState(1);
   const [open, setOpen] = useState(false);
-
   const [modalData, setModalData] = useState({});  
   const [isFeatured , setIsFeatured]= useState()
   const [keyword, setKeyword] = useState(""); 
 
-  const { data  , refetch} = useSalonDetailsQuery({ searchValue: keyword , isFeatured: isFeatured}); 
+  const { data  , refetch} = useSalonDetailsQuery({ searchValue: keyword , isFeatured: isFeatured , page:currentPage}); 
 
   // console.log(data);   
   const [salonFeatured] = useSalonFeaturedMutation()
@@ -86,7 +85,8 @@ if(res?.data?.statusCode === 200){
     {
       title: "S.No",
       dataIndex: "key",
-      key: "key",
+      key: "key", 
+      render:(key)=><p>{((currentPage-1)*10)+key}</p>
     },
     {
       title: "Salon",
